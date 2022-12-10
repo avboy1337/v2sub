@@ -1,3 +1,28 @@
+# xray
+compile xray and install ,just move xray to /usr/bin/ is ok
+and rename xray to v2ray
+# in stall xray service
+sudo gedit /etc/systemd/system/v2ray.service
+ add contents as following
+ 
+[Unit]
+Description=V2Ray Service
+After=network.target nss-lookup.target
+
+[Service]
+User=nobody
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+ExecStart=/usr/bin/v2ray -confdir /etc/v2ray/
+
+[Install]
+WantedBy=multi-user.target
+
+
+then start service
+sudo service v2ray start
+
+
 # v2sub
 
 Go 编写的用于 linux 下订阅并简单配置 [v2ray](https://github.com/v2ray/v2ray-core) 的命令行工具。
