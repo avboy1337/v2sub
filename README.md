@@ -3,8 +3,8 @@ compile xray and install ,just move xray to /usr/bin/ is ok
 and rename xray to v2ray
 # in stall xray service
 sudo gedit /etc/systemd/system/v2ray.service
- add contents as following
- 
+add contents as following
+```
 [Unit]
 Description=V2Ray Service
 After=network.target nss-lookup.target
@@ -17,7 +17,7 @@ ExecStart=/usr/bin/v2ray -confdir /etc/v2ray/
 
 [Install]
 WantedBy=multi-user.target
-
+```
 
 then start service
 sudo service v2ray start
