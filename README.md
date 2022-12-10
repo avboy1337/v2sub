@@ -2,7 +2,9 @@
 compile xray and install ,just move xray to /usr/bin/ is ok
 and rename xray to v2ray
 # in stall xray service
+```
 sudo gedit /etc/systemd/system/v2ray.service
+```
 add contents as following
 ```
 [Unit]
@@ -20,8 +22,9 @@ WantedBy=multi-user.target
 ```
 
 then start service
+```
 sudo service v2ray start
-
+```
 
 # v2sub
 
